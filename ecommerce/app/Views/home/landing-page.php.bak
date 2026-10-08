@@ -1,0 +1,276 @@
+<?php
+$whatsapp  = setting('whatsapp_number', '2348000000000');
+$instagram = setting('instagram_handle', 'azfatbestboutique');
+$threshold = money(freeDeliveryThreshold());
+
+$catImages = [
+    'tees'    => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=80&auto=format&fit=crop',
+    'hoodies' => 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?w=400&q=80&auto=format&fit=crop',
+    'caps'    => 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&q=80&auto=format&fit=crop',
+    'joggers' => 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=400&q=80&auto=format&fit=crop',
+    'sets'    => 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop',
+];
+?>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 1: HERO
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero-section">
+    <div class="hero">
+        <img
+            class="hero__bg"
+            src="<?= asset('images/hero.jpg') ?>"
+            alt=""
+            width="1400"
+            height="900"
+            aria-hidden="true"
+        >
+        <div class="hero__content">
+            <p class="hero__brand">AZFAT BEST BOUTIQUE</p>
+            <h1 class="hero__title">We're<br><em>Open</em></h1>
+            <p class="hero__subtitle-line">Where Elegance Meets Choice</p>
+            <div class="hero__actions">
+                <a href="<?= url('/shop') ?>" class="btn btn--primary btn--lg">Shop Now →</a>
+                <a href="<?= url('/shop') ?>" class="btn btn--outline btn--lg" style="color:#fff;border-color:rgba(255,255,255,0.45);">Explore Collection</a>
+            </div>
+        </div>
+        <div class="hero__contact-bar">
+            <a href="https://wa.me/<?= e($whatsapp) ?>" target="_blank" rel="noopener" aria-label="WhatsApp us">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                <?= e($whatsapp) ?>
+            </a>
+            <span style="opacity:.3">|</span>
+            <a href="https://instagram.com/<?= e($instagram) ?>" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                @<?= e($instagram) ?>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 2: TRUST STRIP
+     ═══════════════════════════════════════════════════════ -->
+<section class="trust-strip container" aria-label="Why shop with us">
+    <div class="trust-item">
+        <div class="trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div><p class="trust-item__title">Free Delivery</p><p class="trust-item__text">On orders above <?= $threshold ?></p></div>
+    </div>
+    <div class="trust-item">
+        <div class="trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div><p class="trust-item__title">Secure Payments</p><p class="trust-item__text">100% secure checkout</p></div>
+    </div>
+    <div class="trust-item">
+        <div class="trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg></div>
+        <div><p class="trust-item__title">Easy Returns</p><p class="trust-item__text">7-day return policy</p></div>
+    </div>
+    <div class="trust-item">
+        <div class="trust-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72 13 13 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 11a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 13 13 0 0 0 2.81.7A2 2 0 0 1 23 18v2.92z"/></svg></div>
+        <div><p class="trust-item__title">WhatsApp Support</p><p class="trust-item__text">Always here to help</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 3: SHOP BY CATEGORY
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="categories-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="categories-heading">Shop by Category</h2>
+            <a href="<?= url('/shop') ?>" class="section-header__link">View All →</a>
+        </div>
+        <div class="category-grid">
+            <?php foreach ($categories as $cat):
+                $img = !empty($cat['image'])
+                    ? url('/images/categories/' . $cat['image'])
+                    : ($catImages[$cat['slug']] ?? 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80&auto=format&fit=crop');
+            ?>
+            <a href="<?= url('/category/' . e($cat['slug'])) ?>" class="category-tile" aria-label="Shop <?= e($cat['name']) ?>">
+                <img src="<?= $img ?>" alt="<?= e($cat['name']) ?>" width="300" height="400" loading="lazy">
+                <div class="category-tile__overlay">
+                    <span class="category-tile__name"><?= e($cat['name']) ?></span>
+                    <span class="category-tile__link">Shop Now →</span>
+                </div>
+            </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 4: NEW ARRIVALS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" style="background: var(--clr-grey-100); padding: var(--space-10) 0;" aria-labelledby="new-arrivals-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="new-arrivals-heading">New Arrivals</h2>
+            <a href="<?= url('/shop') ?>" class="section-header__link">View All →</a>
+        </div>
+        <?php if (!empty($newArrivals)): ?>
+        <div class="product-row" role="list">
+            <?php foreach ($newArrivals as $product): ?>
+            <div role="listitem"><?php require VIEW_PATH . '/partials/product-card.php'; ?></div>
+            <?php endforeach; ?>
+        </div>
+        <?php else: ?>
+        <p style="color:var(--clr-grey-600);text-align:center;padding:var(--space-8) 0;">Products coming soon!</p>
+        <?php endif; ?>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 5: BEST SELLERS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="best-sellers-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="best-sellers-heading">Best Sellers</h2>
+            <a href="<?= url('/shop') ?>" class="section-header__link">View All →</a>
+        </div>
+        <?php if (!empty($bestSellers)): ?>
+        <div class="product-grid">
+            <?php foreach ($bestSellers as $product): ?>
+                <?php require VIEW_PATH . '/partials/product-card.php'; ?>
+            <?php endforeach; ?>
+        </div>
+        <?php else: ?>
+        <p style="color:var(--clr-grey-600);text-align:center;padding:var(--space-8) 0;">Products coming soon!</p>
+        <?php endif; ?>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 6: PROMO BANNERS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" aria-label="Promotions">
+    <div class="container">
+        <div class="promo-grid">
+            <div class="promo-banner promo-banner--accent">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+                <div class="promo-banner__content">
+                    <p class="promo-banner__label">⚡ Flash Sale</p>
+                    <h3 class="promo-banner__title">Up To<br>30% Off</h3>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown__item"><div class="countdown__num" id="cd-days">00</div><div class="countdown__label">Days</div></div>
+                        <div class="countdown__item"><div class="countdown__num" id="cd-hours">00</div><div class="countdown__label">Hrs</div></div>
+                        <div class="countdown__item"><div class="countdown__num" id="cd-mins">00</div><div class="countdown__label">Mins</div></div>
+                        <div class="countdown__item"><div class="countdown__num" id="cd-secs">00</div><div class="countdown__label">Secs</div></div>
+                    </div>
+                    <a href="<?= url('/shop') ?>" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,.6);">Shop Sale Now</a>
+                </div>
+            </div>
+            <div class="promo-banner">
+                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&q=80&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+                <div class="promo-banner__content">
+                    <p class="promo-banner__label">New Collection</p>
+                    <h3 class="promo-banner__title">Street Ready<br>2026</h3>
+                    <p style="color:rgba(255,255,255,.75);font-size:var(--text-sm);margin-bottom:var(--space-4);">Discover the latest trends and fresh styles.</p>
+                    <a href="<?= url('/shop') ?>" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,.6);">Shop Collection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 7: WHY CHOOSE US
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" style="background:var(--clr-black);" aria-labelledby="why-us-heading">
+    <div class="container">
+        <div class="section-header" style="margin-bottom:var(--space-8);">
+            <h2 id="why-us-heading" style="color:var(--clr-white);">Why Choose AZFAT BEST</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h3 class="why-item__title">Premium Quality</h3>
+                <p class="why-item__text">Every piece is made from carefully selected fabrics built to last wash after wash.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <h3 class="why-item__title">Fast Delivery</h3>
+                <p class="why-item__text">We ship to all 36 states across Nigeria. Quick, reliable and trackable.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h3 class="why-item__title">Made for You</h3>
+                <p class="why-item__text">Sizes from XS to XXL, multiple colourways — something for every style.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 8: REVIEWS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="reviews-heading">
+    <div class="container">
+        <div class="section-header"><h2 id="reviews-heading">What Customers Say</h2></div>
+        <div class="reviews-grid">
+            <?php foreach ([
+                ['name'=>'Tolu A.','location'=>'Lagos','rating'=>5,'text'=>'The hoodie quality is insane for this price. Wore it everywhere this week. Definitely buying more.'],
+                ['name'=>'Chukwudi O.','location'=>'Abuja','rating'=>5,'text'=>'Fast delivery to Abuja, packaging was clean, product exactly as described. 10/10 would recommend.'],
+                ['name'=>'Fatima B.','location'=>'Kano','rating'=>5,'text'=>'The oversized tee fits perfectly. Material is thick and premium. Already got my sister hooked too 😂'],
+                ['name'=>'Emeka N.','location'=>'Enugu','rating'=>4,'text'=>'Solid brand. Tee and jogger set arrived in great condition. Would appreciate more colour options.'],
+            ] as $review): ?>
+            <div class="review-card">
+                <div class="review-card__stars stars"><?= str_repeat('★', $review['rating']) ?><?= str_repeat('☆', 5 - $review['rating']) ?></div>
+                <p class="review-card__text">"<?= e($review['text']) ?>"</p>
+                <div class="review-card__author">
+                    <div class="review-card__avatar"><?= e(substr($review['name'], 0, 1)) ?></div>
+                    <div><p class="review-card__name"><?= e($review['name']) ?></p><p class="review-card__location"><?= e($review['location']) ?></p></div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 9: FAQ
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" id="faq" style="background:var(--clr-grey-100);" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header"><h2 id="faq-heading">Frequently Asked Questions</h2></div>
+        <div class="faq-list">
+            <?php foreach ([
+                ['q'=>'How long does delivery take?','a'=>'Lagos orders arrive within 1–2 business days. Other states typically take 2–4 business days.'],
+                ['q'=>'What payment methods do you accept?','a'=>'We accept all debit and credit cards, bank transfer, USSD, and mobile banking — all processed securely through Paystack.'],
+                ['q'=>'Can I return or exchange an item?','a'=>'Yes. You have 7 days from delivery to request a return or exchange. Items must be unworn and in original condition. WhatsApp us to start the process.'],
+                ['q'=>'Do you deliver to all states in Nigeria?','a'=>'Yes — we deliver to all 36 states and FCT. Delivery fees vary by state, and orders above ₦50,000 get free delivery.'],
+                ['q'=>'How do I know my size?','a'=>'Each product page has a size guide. Our tees and hoodies are oversized — if you prefer a slimmer fit, size down. Still unsure? WhatsApp us.'],
+            ] as $i => $faq): ?>
+            <div class="faq-item">
+                <button class="faq-item__question" aria-expanded="false" aria-controls="faq-answer-<?= $i ?>" onclick="toggleFaq(this)">
+                    <?= e($faq['q']) ?>
+                    <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-item__answer" id="faq-answer-<?= $i ?>" hidden><p><?= e($faq['a']) ?></p></div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 10: DROP ALERT
+     ═══════════════════════════════════════════════════════ -->
+<section class="section drop-alert" aria-labelledby="signup-heading">
+    <div class="container">
+        <div class="drop-alert__inner">
+            <div class="drop-alert__text">
+                <h2 id="signup-heading">Be First to Know</h2>
+                <p>Get notified about new drops, exclusive deals and restocks before anyone else.</p>
+            </div>
+            <form class="drop-alert__form" action="<?= url('/subscribe') ?>" method="POST" novalidate>
+                <?= csrfField() ?>
+                <div class="drop-alert__input-wrap">
+                    <label for="subscriber-email" class="sr-only">Your email address</label>
+                    <input type="email" id="subscriber-email" name="email" class="form-control" placeholder="Enter your email address" autocomplete="email" required>
+                    <button type="submit" class="btn btn--primary">Notify Me</button>
+                </div>
+                <p class="drop-alert__disclaimer">No spam. Unsubscribe anytime.</p>
+            </form>
+        </div>
+    </div>
+</section>
